@@ -35,9 +35,13 @@ require('./app/routes.js')(app, streams);
 var server = app.listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-
+console.log("STARTING WebRTC");
 var io = require('socket.io').listen(server);
 /**
  * Socket.io event handling
  */
 require('./app/socketHandler.js')(io, streams);
+
+app.get('/', function (req, res) {
+    res.status('200').send('Service is up');
+});
