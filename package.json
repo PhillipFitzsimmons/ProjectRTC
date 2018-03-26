@@ -25,4 +25,7 @@
     "serve-favicon": "^2.2.0",
     "socket.io": "1.0"
   }
+  "scripts": {
+    "start": "node app.js --websocket-port=$OPENSHIFT_NODEJS_PORT --log-level=1"
+}
 }
