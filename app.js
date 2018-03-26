@@ -41,7 +41,3 @@ var io = require('socket.io').listen(server);
  * Socket.io event handling
  */
 require('./app/socketHandler.js')(io, streams);
-
-app.get('/', function (req, res) {
-    res.status('200').send('Service is up');
-});
