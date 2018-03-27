@@ -14,7 +14,7 @@ var favicon = require('serve-favicon')
 var app = express();
 
 // all environments
-var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var port = process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000;
 //app.set('port', process.env.PORT || 3000);
 app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
