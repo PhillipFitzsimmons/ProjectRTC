@@ -15,8 +15,8 @@ var app = express();
 
 
 var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-// all environments
 //app.set('port', process.env.PORT || 3000);
+// all environments
 app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
