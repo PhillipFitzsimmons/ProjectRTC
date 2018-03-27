@@ -14,7 +14,9 @@ var favicon = require('serve-favicon')
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+//app.set('port', process.env.PORT || 3000);
+app.set('port', port);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
@@ -40,7 +42,3 @@ var io = require('socket.io').listen(server);
  * Socket.io event handling
  */
 require('./app/socketHandler.js')(io, streams);
-
-app.get('/', function (req, res) {
-    res.status('200').send('Service is up');
-});
